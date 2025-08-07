@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(textmate LANGUAGES CXX C)
 
 string(APPEND CMAKE_CXX_FLAGS " -std=gnu++11")
+string(APPEND CMAKE_C_FLAGS " -std=gnu17 -Wno-incompatible-pointer-types")
 set (CMAKE_CXX_STANDARD 11)
 
 add_definitions(-fPIC)
