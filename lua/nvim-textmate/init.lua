@@ -512,6 +512,10 @@ local function txmt_info()
 	end
 end
 
+local function txmt_list_languages()
+	print(vim.inspect(languages_map))
+end
+
 local function txmt_debug_scopes()
 	debug_scopes = not debug_scopes
 	if debug_scopes then
@@ -542,6 +546,7 @@ api.nvim_create_user_command(
 )
 api.nvim_create_user_command("TxMtDebugScopes", txmt_debug_scopes, { bang = true, desc = "debug textmate scopes" })
 api.nvim_create_user_command("TxMtInfo", txmt_info, { bang = true, desc = "textmate info" })
+api.nvim_create_user_command("TxMtListLanguages", txmt_list_languages, { bang = true })
 
 return {
 	setup = setup,
